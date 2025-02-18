@@ -15,8 +15,11 @@ public class Main {
         } else if (operator.equals("minus")) {
             System.out.println(subtract(a, b));
 
-        } else if (operator.equals("recu")) {
+        } else if (operator.equals("add")) {
             System.out.println(recursiveAdd(a, b));
+
+        } else if (operator.equals("subtract")) {
+            System.out.println(recursiveSubtract(a, b));
 
         } else {
             System.out.println("Invalid operator");
@@ -37,6 +40,13 @@ public class Main {
             return a;
         }
         return recursiveAdd(a + 1, b - 1);
+    }
+
+    public static int recursiveSubtract(int a, int b) {
+        if (b <= 0) {
+            return a;
+        }
+        return recursiveSubtract(a - 1, b - 1);
     }
 
 }
